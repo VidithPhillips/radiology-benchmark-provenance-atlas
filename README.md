@@ -2,7 +2,8 @@
 
 A public resource linking open radiology AI models to canonical benchmark datasets using evidence recovered from Hugging Face and GitHub.
 
-**Live app (free hosting):** deploy in ~2 minutes with [Streamlit Community Cloud](https://streamlit.io/cloud) — see **[DEPLOY.md](DEPLOY.md)**. After deploy, add your `https://….streamlit.app` link here and in the repo About URL.
+**Live app:** [**Open the atlas in your browser →**](https://radiology-benchmark-provenance-atlas.streamlit.app)  
+*(Hosted free on [Streamlit Community Cloud](https://streamlit.io/cloud); self-host steps in [DEPLOY.md](DEPLOY.md).)*
 
 ## Atlas preview
 

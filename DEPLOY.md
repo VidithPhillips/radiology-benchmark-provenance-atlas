@@ -38,7 +38,8 @@ Logs should then show install progress and **Running Streamlit** within a few mi
 
 ## After deploy
 
-- README / GitHub **Website** → your `https://….streamlit.app` URL  
+- README now links to: **https://radiology-benchmark-provenance-atlas.streamlit.app**  
+- GitHub repo **Settings → General → Website** (optional) → same URL  
 - **Sleep:** first load after idle ~30s is normal on free tier  
 
 ## Notes
