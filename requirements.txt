@@ -1,0 +1,5 @@
+# Pin numpy + pandas together so pip installs a consistent stack (avoids broken conda mixes).
+numpy>=1.26.0,<2.1
+pandas>=2.0.0,<3
+streamlit>=1.28.0
+plotly>=5.18.0

@@ -71,6 +71,31 @@ If you want to:
 - analyze model–dataset links directly, use [`supplementary_table_s1_full_atlas_edge_list.csv`](data/release/supplementary_table_s1_full_atlas_edge_list.csv)
 - review models included in the final atlas, use [`supplementary_table_s2_model_registry_in_atlas.csv`](data/release/supplementary_table_s2_model_registry_in_atlas.csv)
 
+### Streamlit app (explorer + mind map)
+
+**If you use Anaconda and see** `No module named 'numpy._core.multiarray'`: that happens because `streamlit run` is still using **Anaconda’s** Python (see the traceback path). Use the launcher so the app always runs in the repo’s **`.venv`**, not PATH:
+
+```bash
+cd /path/to/radiology-benchmark-provenance-atlas
+chmod +x run_app.sh   # once
+./run_app.sh
+```
+
+Or, without the script, call Streamlit **only** via the venv interpreter (never the global `streamlit` command until you’ve activated):
+
+```bash
+python3 -m venv .venv
+.venv/bin/pip install --upgrade pip
+.venv/bin/pip install -r requirements.txt
+.venv/bin/python -m streamlit run app/app.py
+```
+
+The app includes a **Home** mind map (Plotly), **Datasets** / **Models** browsers, **Atlas map** (ring + bipartite), and **About**. Optional `.streamlit/pages.toml` sets sidebar labels (Streamlit ≥1.36). Requires **plotly** (see `requirements.txt`).
+
+In Cursor/VS Code, set the interpreter to **`.venv/bin/python`** for this workspace, then run Streamlit from the integrated terminal (or use `./run_app.sh`).
+
+Repair Anaconda only if you want base fixed: `pip install --force-reinstall "numpy>=1.26,<2.1" "pandas>=2"` (same env as broken numpy).
+
 ---
 
 ## Repository Contents

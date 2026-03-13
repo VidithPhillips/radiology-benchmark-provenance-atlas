@@ -1,0 +1,10 @@
+# Apple-adjacent: high contrast, system fonts, calm neutrals + one accent.
+[theme]
+base = "light"
+primaryColor = "#0071E3"
+backgroundColor = "#F5F5F7"
+secondaryBackgroundColor = "#FFFFFF"
+textColor = "#1D1D1F"
+
+[browser]
+gatherUsageStats = false

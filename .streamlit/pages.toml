@@ -1,0 +1,26 @@
+# Sidebar page names (Streamlit ≥1.36). Paths relative to the app directory (where app.py lives).
+
+[[pages]]
+path = "app.py"
+name = "Home"
+icon = "🗺️"
+
+[[pages]]
+path = "pages/1_Dataset_Browser.py"
+name = "Datasets"
+icon = "📁"
+
+[[pages]]
+path = "pages/2_Model_Browser.py"
+name = "Models"
+icon = "🤖"
+
+[[pages]]
+path = "pages/4_Atlas_Graph.py"
+name = "Atlas map"
+icon = "🕸️"
+
+[[pages]]
+path = "pages/3_About.py"
+name = "About"
+icon = "ℹ️"
