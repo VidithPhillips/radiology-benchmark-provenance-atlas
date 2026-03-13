@@ -1,0 +1,10 @@
+Benchmark family,"Canonical datasets, n","Linked models, n","Atlas edges, n","High-confidence edges, n","Medium-confidence edges, n","Low-confidence edges, n",Representative datasets
+Mimic,2,36,38,28,10,0,"MIMIC-CXR Database, MS-CXR"
+Chexpert,1,33,33,28,5,0,CheXpert
+Mri,3,32,33,0,33,0,"BraTS, fastMRI, OASIS"
+Radgraph,2,9,18,14,4,0,"RadGraph, RadGraph-XL"
+Ct,1,15,15,0,15,0,LIDC-IDRI
+Mammography,3,7,8,0,7,1,"CBIS-DDSM, INbreast, MIAS"
+Vindr,2,2,2,0,2,0,"VinDr-CXR, VinDr-Mammo"
+Radialog,1,1,1,0,1,0,RaDialog Instruct
+Other,3,15,15,12,1,2,"PadChest, ChestX-ray14, OpenI"
