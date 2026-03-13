@@ -4,7 +4,7 @@ A public resource linking open radiology AI models to canonical benchmark datase
 
 ## Atlas preview
 
-![Benchmark-centered map of open radiology AI](figures/Figure2.png)
+![Benchmark-centered map of open radiology AI](figures/Figure1.png)
 
 ## Overview
 
