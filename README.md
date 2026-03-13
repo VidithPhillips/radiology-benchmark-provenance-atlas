@@ -8,73 +8,67 @@ Public radiology AI models often mention datasets inconsistently across model ca
 
 This repository releases a benchmark-centered atlas of model–dataset provenance links for open radiology AI. The atlas was built by collecting public radiology AI models and repositories, normalizing benchmark dataset aliases, mining public text evidence across platforms, and assigning confidence scores to recovered model–dataset links.
 
-The project is intended as both:
-
+This project is intended as both:
 - a research resource for studying benchmark concentration and reuse in open radiology AI
 - a practical lookup tool for navigating public model–dataset links
 
-## Current atlas snapshot
+---
 
-The current paper-facing atlas contains:
+## Current Atlas Snapshot
 
-- **117** public models
-- **18** canonical or derived radiology benchmark datasets
-- **163** final atlas edges
-- **82** high-confidence edges
-- **78** medium-confidence edges
-- **3** low-confidence edges
+| Metric | Count |
+|---|---|
+| Public models | 117 |
+| Canonical/derived benchmark datasets | 18 |
+| Final atlas edges | 163 |
+| High-confidence edges | 82 |
+| Medium-confidence edges | 78 |
+| Low-confidence edges | 3 |
 
-### Dominant benchmark families in the final atlas
+**Dominant benchmark families:** MIMIC · CheXpert · MRI · RadGraph
 
-- **MIMIC family**
-- **CheXpert family**
-- **MRI family**
-- **RadGraph family**
+Secondary families include CT, mammography, VinDr, RaDialog, and others.
 
-Secondary families include CT, mammography, VinDr, RaDialog, and other benchmark groupings.
+---
 
-## Released files
+## Released Files
 
-The main released files are located in `data/release/`.
+All main released files are located in `data/release/`.
 
-### Main paper tables
+### Main Paper Tables
 
-- `table1_family_summary.csv`  
-  Benchmark family composition of the final atlas
+| File | Description |
+|---|---|
+| `table1_family_summary.csv` | Benchmark family composition of the final atlas |
+| `table2_dataset_summary.csv` | Canonical datasets represented in the final atlas |
 
-- `table2_dataset_summary.csv`  
-  Canonical datasets represented in the final atlas
+### Supplementary Tables
 
-### Supplementary tables
-
-- `supplementary_table_s1_full_atlas_edge_list.csv`  
-  Full atlas edge list for the final paper atlas
-
-- `supplementary_table_s2_model_registry_in_atlas.csv`  
-  Model registry for all models represented in the final atlas
+| File | Description |
+|---|---|
+| `supplementary_table_s1_full_atlas_edge_list.csv` | Full atlas edge list for the final paper atlas |
+| `supplementary_table_s2_model_registry_in_atlas.csv` | Model registry for all models in the final atlas |
 
 ### Workbook
 
-- `atlas_tables_for_manuscript.xlsx`  
-  Consolidated workbook containing the main manuscript tables and supplementary atlas tables
+| File | Description |
+|---|---|
+| `atlas_tables_for_manuscript.xlsx` | Consolidated workbook with all main and supplementary tables |
 
-## What this resource contains
+---
 
-This repository currently provides four main outputs:
+## Repository Contents
 
-1. **Canonical benchmark registry logic**  
-   A benchmark-centered representation of radiology datasets organized into canonical datasets, derived resources, and broader benchmark families.
+This repository provides four main outputs:
 
-2. **Model registry**  
-   A list of public models included in the final atlas.
+1. **Canonical benchmark registry logic** — Benchmark-centered representation of radiology datasets organized into canonical datasets, derived resources, and broader benchmark families.
+2. **Model registry** — List of public models included in the final atlas.
+3. **Evidence-scored atlas edge list** — Model–dataset links recovered from public sources, labeled by confidence and evidence type.
+4. **Family-level and dataset-level summaries** — Aggregated views of the final atlas for manuscript reporting and downstream reuse.
 
-3. **Evidence-scored atlas edge list**  
-   Model–dataset links recovered from public sources and labeled by confidence and evidence type.
+---
 
-4. **Family-level and dataset-level summaries**  
-   Aggregated views of the final atlas for manuscript reporting and downstream reuse.
-
-## High-level method
+## Methods Overview
 
 The atlas was built using a multi-step public-source pipeline:
 
@@ -88,16 +82,75 @@ The atlas was built using a multi-step public-source pipeline:
 8. Collapse links into a benchmark-centered final atlas
 9. Summarize the atlas at family and dataset level
 
-A concise methods description is provided in [`docs/methods_overview.md`](docs/methods_overview.md).
+See [`docs/methods_overview.md`](docs/methods_overview.md) for a concise description.
 
-## Repository structure
+---
 
+## Repository Structure
 ```text
 radiology-benchmark-provenance-atlas/
 ├── data/
-│   └── release/
-├── docs/
-├── figures/
-├── notebooks/
-├── src/
-└── app/
+│   └── release/          # Released atlas tables
+├── docs/                 # Methods, tiering, confidence, and data dictionary docs
+├── figures/              # Current figure assets
+├── notebooks/            # Notebook scaffold for reproducible build steps
+├── src/                  # Code organization scaffold for the provenance pipeline
+└── app/                  # Placeholder for the atlas explorer app
+```
+
+---
+
+## Figures
+
+| File | Description |
+|---|---|
+| `Figure1.png` | Construction of the public provenance atlas |
+| `Figure2.png` | Benchmark-centered map of open radiology AI |
+| `Figure3.png` | How the atlas can be used |
+
+---
+
+## Interpretation
+
+This atlas supports questions such as:
+- Which benchmark datasets are most central in open radiology AI?
+- Which public models are linked to a given benchmark?
+- Which benchmark families dominate the visible ecosystem?
+- Which model–dataset links are supported by stronger versus weaker public evidence?
+
+The current atlas suggests that the public radiology AI ecosystem contracts to a relatively small benchmark-centered core once public provenance signals are cleaned and standardized.
+
+---
+
+## Limitations
+
+This repository captures publicly recoverable provenance evidence, not definitive ground-truth training history for every model. A model–dataset link in this atlas means that public evidence supports a meaningful connection between the model and dataset — which may reflect training, evaluation, fine-tuning, benchmarking, reporting, or related documented use.
+
+The atlas should be interpreted as an **evidence-weighted public provenance resource** rather than a complete ground-truth map of all dataset usage.
+
+See [`docs/limitations.md`](docs/limitations.md) for more detail.
+
+---
+
+## Status
+
+This repository contains the first public atlas release and accompanying manuscript-facing tables and figures.
+
+**Planned next steps:**
+- Add fuller reproducible pipeline code
+- Release benchmark registry tables explicitly
+- Build a lightweight searchable web explorer for the atlas
+
+---
+
+## Citation
+
+Citation metadata is maintained in `CITATION.cff`. If you use this repository, please cite:
+- the associated manuscript (once available)
+- this repository release
+
+---
+
+## Contact
+
+For questions, collaboration, or citation clarifications, please open an issue in this repository.
