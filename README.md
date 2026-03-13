@@ -2,6 +2,10 @@
 
 A public resource linking open radiology AI models to canonical benchmark datasets using evidence recovered from Hugging Face and GitHub.
 
+## Atlas preview
+
+![Benchmark-centered map of open radiology AI](figures/Figure2.png)
+
 ## Overview
 
 Public radiology AI models often mention datasets inconsistently across model cards, repository READMEs, and other public files. This makes it hard to understand which benchmark datasets actually anchor the visible open-model ecosystem.
@@ -33,27 +37,39 @@ Secondary families include CT, mammography, VinDr, RaDialog, and others.
 
 ## Released Files
 
-All main released files are located in `data/release/`.
+The main released files are located in `data/release/`.
 
-### Main Paper Tables
+### Main paper tables
 
-| File | Description |
-|---|---|
-| `table1_family_summary.csv` | Benchmark family composition of the final atlas |
-| `table2_dataset_summary.csv` | Canonical datasets represented in the final atlas |
+- [`table1_family_summary.csv`](data/release/table1_family_summary.csv)  
+  Benchmark family composition of the final atlas
 
-### Supplementary Tables
+- [`table2_dataset_summary.csv`](data/release/table2_dataset_summary.csv)  
+  Canonical datasets represented in the final atlas
 
-| File | Description |
-|---|---|
-| `supplementary_table_s1_full_atlas_edge_list.csv` | Full atlas edge list for the final paper atlas |
-| `supplementary_table_s2_model_registry_in_atlas.csv` | Model registry for all models in the final atlas |
+### Supplementary tables
+
+- [`supplementary_table_s1_full_atlas_edge_list.csv`](data/release/supplementary_table_s1_full_atlas_edge_list.csv)  
+  Full atlas edge list for the final paper atlas
+
+- [`supplementary_table_s2_model_registry_in_atlas.csv`](data/release/supplementary_table_s2_model_registry_in_atlas.csv)  
+  Model registry for all models represented in the final atlas
 
 ### Workbook
 
-| File | Description |
-|---|---|
-| `atlas_tables_for_manuscript.xlsx` | Consolidated workbook with all main and supplementary tables |
+- [`atlas_tables_for_manuscript.xlsx`](data/release/atlas_tables_for_manuscript.xlsx)  
+  Consolidated workbook containing the main manuscript tables and supplementary atlas tables
+
+---
+
+## How to use this repository
+
+If you want to:
+
+- browse benchmark families, start with [`table1_family_summary.csv`](data/release/table1_family_summary.csv)
+- inspect individual canonical datasets, start with [`table2_dataset_summary.csv`](data/release/table2_dataset_summary.csv)
+- analyze model–dataset links directly, use [`supplementary_table_s1_full_atlas_edge_list.csv`](data/release/supplementary_table_s1_full_atlas_edge_list.csv)
+- review models included in the final atlas, use [`supplementary_table_s2_model_registry_in_atlas.csv`](data/release/supplementary_table_s2_model_registry_in_atlas.csv)
 
 ---
 
@@ -61,7 +77,7 @@ All main released files are located in `data/release/`.
 
 This repository provides four main outputs:
 
-1. **Canonical benchmark registry logic** — Benchmark-centered representation of radiology datasets organized into canonical datasets, derived resources, and broader benchmark families.
+1. **Canonical benchmark registry** — Benchmark-centered representation of radiology datasets organized into canonical datasets, derived resources, and broader benchmark families.
 2. **Model registry** — List of public models included in the final atlas.
 3. **Evidence-scored atlas edge list** — Model–dataset links recovered from public sources, labeled by confidence and evidence type.
 4. **Family-level and dataset-level summaries** — Aggregated views of the final atlas for manuscript reporting and downstream reuse.
@@ -102,11 +118,11 @@ radiology-benchmark-provenance-atlas/
 
 ## Figures
 
-| File | Description |
-|---|---|
-| `Figure1.png` | Construction of the public provenance atlas |
-| `Figure2.png` | Benchmark-centered map of open radiology AI |
-| `Figure3.png` | How the atlas can be used |
+Current figure assets are stored in `figures/`:
+
+- [`Figure1.png`](figures/Figure1.png) — construction of the public provenance atlas
+- [`Figure2.png`](figures/Figure2.png) — benchmark-centered map of open radiology AI
+- [`Figure3.png`](figures/Figure3.png) — how the atlas can be used
 
 ---
 
