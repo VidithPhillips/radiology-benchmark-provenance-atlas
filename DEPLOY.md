@@ -1,40 +1,47 @@
 # Host the atlas app for free (Streamlit Community Cloud)
 
-**Cost:** $0 · **Auth:** GitHub · **Time:** ~2 minutes
+**Cost:** $0 · **Auth:** GitHub
 
-Streamlit hosts Python apps and pulls your code from GitHub. No credit card.
+---
 
-## Steps
+## Stuck on “in the oven” / logs stop after “Resolved 38 packages”?
 
-1. **Open** [share.streamlit.io](https://share.streamlit.io) and sign in with **GitHub** (authorize Streamlit if asked).
+That almost always means the builder is on **Python 3.14** while **numpy/pandas** install hangs or never finishes.
 
-2. **New app** → **Deploy a public app from GitHub**.
+**Python version cannot be changed after you deploy.** You have to start over:
 
-3. **Repository:** choose `VidithPhillips/radiology-benchmark-provenance-atlas` (or your fork).
+1. **Delete** the app: [Manage app](https://share.streamlit.io) → **⋮** → **Delete app**  
+   (Same subdomain, e.g. `radiology-atlas`, is free again right away.)
 
-4. **Branch:** `main`
+2. **Deploy again** → before clicking final Deploy, open **Advanced settings**.
 
-5. **Main file path:** `app/app.py`  
-   (This is the entrypoint; multipage apps under `app/pages/` load automatically.)
+3. Set **Python version** to **3.12** (or **3.11**). **Not 3.14.**
 
-6. **App URL:** pick a subdomain, e.g. `radiology-atlas` → live at  
-   `https://radiology-atlas.streamlit.app`
+4. Save → Deploy again with:
+   - **Repository:** `VidithPhillips/radiology-benchmark-provenance-atlas`
+   - **Branch:** `main`
+   - **Main file path:** `app/app.py`
+   - **App URL:** e.g. `radiology-atlas`
 
-7. **Deploy.** First build installs `requirements.txt` (~1–2 min).
+Logs should then show install progress and **Running Streamlit** within a few minutes.
+
+---
+
+## First-time deploy (checklist)
+
+1. [share.streamlit.io](https://share.streamlit.io) → GitHub login  
+2. **New app** → repo + branch `main` + main file **`app/app.py`**  
+3. **Advanced settings → Python 3.12** (required)  
+4. Deploy  
+
+---
 
 ## After deploy
 
-- Put the public URL in the **GitHub repo → Settings → Website** (optional).
-- Add a badge or link at the top of **README.md** so visitors click straight from GitHub.
+- README / GitHub **Website** → your `https://….streamlit.app` URL  
+- **Sleep:** first load after idle ~30s is normal on free tier  
 
 ## Notes
 
-- **CSV data** lives in `data/release/` in the repo — already on GitHub, so the hosted app reads it like local.
-- **Sleep:** free apps spin down after idle; first visitor after sleep may wait ~30s (normal).
-- **Secrets:** this app needs none. Don’t add API keys unless you add features that need them.
-
-## Alternative (also free, more setup)
-
-- **Hugging Face Spaces** (Streamlit SDK) — good if you already use HF; config is different from above.
-
-If deploy fails, check the Streamlit Cloud **logs**: usually a missing dependency → add to `requirements.txt` and push.
+- Data: `data/release/` in repo — no secrets needed.  
+- Docs: [Upgrade Python (delete + redeploy)](https://docs.streamlit.io/deploy/streamlit-community-cloud/manage-your-app/upgrade-python)
