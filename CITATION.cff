@@ -1,0 +1,12 @@
+cff-version: 1.2.0
+title: "Public Radiology AI Benchmark Provenance Atlas"
+message: "If you use this repository, please cite it using the metadata below."
+type: dataset
+authors:
+  - family-names: "Phillips"
+    given-names: "Vidith"
+repository-code: "https://github.com/VidithPhillips/radiology-benchmark-provenance-atlas"
+abstract: "A public resource linking open radiology AI models to canonical benchmark datasets using evidence recovered from public repositories."
+license: "MIT"
+version: "0.1.0"
+date-released: 2026-03-13
